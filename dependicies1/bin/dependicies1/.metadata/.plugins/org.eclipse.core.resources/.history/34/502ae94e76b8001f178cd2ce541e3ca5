@@ -1,0 +1,5 @@
+package basicSelJava;
+
+public interface Car {
+
+}

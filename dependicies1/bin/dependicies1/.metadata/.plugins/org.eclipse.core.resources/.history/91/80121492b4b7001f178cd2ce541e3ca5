@@ -1,0 +1,24 @@
+package articraft;
+
+import org.testng.Assert;
+
+import org.testng.annotations.Test;
+
+@SuppressWarnings("hiding")
+public class ATest {
+	
+	@Test
+	public void testAddMethod() {
+		A aa = new A();
+		Object actResult = ((Object) (44, 10);
+		Assert.assertEquals(actResult, 56);
+	
+	}
+
+	private Object aa(int i, int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

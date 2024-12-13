@@ -1,0 +1,25 @@
+package testngmaven;
+
+import java.util.ArrayList;
+
+public class StudentTest {
+	
+	@SuppressWarnings("unchecked")
+	public static <Student> void main(String[] args) {
+		@SuppressWarnings("unused")
+		ArrayList<Student> alStudents = new ArrayList<Student>();
+		alStudents.add(new Student(23,"pune"));
+		ArrayList<Student> alStudent;
+		alStudent.add((Student) new student());
+		alStudent.add(new Student(23,"mumbai"));
+		
+		Student[] alstudents;
+		for (Student student : alstudents) {
+			if (student.location.equals("nagpur")) {
+				System.out.println();
+			}
+		}
+		
+	}
+
+}

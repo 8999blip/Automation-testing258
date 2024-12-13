@@ -1,0 +1,16 @@
+package testngmaven;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrowserWindow {
+	public static void main(String[] args) {
+		//open browser
+		WebDriver driver = new ChromeDriver();
+		//open url
+		 driver.navigate().to("https://javabykiran.com/selenium/login.html");
+		driver.manage().window().maximize();
+		
+	}
+
+}

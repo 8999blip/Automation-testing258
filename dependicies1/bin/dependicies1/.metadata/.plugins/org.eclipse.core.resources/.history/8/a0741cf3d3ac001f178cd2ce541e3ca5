@@ -1,0 +1,8 @@
+package Com.tka;
+
+public class D {
+	public void m4() {
+		System.out.println("C- m4");
+	}
+
+}

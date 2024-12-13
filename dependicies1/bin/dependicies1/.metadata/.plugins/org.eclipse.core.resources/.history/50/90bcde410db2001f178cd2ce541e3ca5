@@ -1,0 +1,35 @@
+package testngmaven;
+
+import java.util.ArrayList;
+
+import javax.xml.transform.sax.SAXResult;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class WebTableTest {
+	
+	@Test
+	private void testInvalidCredentialsLoginPage() {
+		//this is comin from BRDnot website
+		ArrayList<String> alExpResult;
+		alExpResult.add("Category ID");
+		alExpResult.add("Category Name");
+		alExpResult.add("Creatd at");
+		alExpResult.add("Modified At");
+		alExpResult.add("Actions");
+		ArrayList<String> alActResult= new ArrayList<String>[];
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://javabykiran.com/selenium/admin.html#logout");
+		String actColumn = driver.findElement(By.xpath)("//*[@id=\"categories-table\"]/thead/tr/th[1]");
+		.getText();
+		System.out.println(actColumn);
+		alActResult.add(actColumn);
+		
+	}
+	
+    Assert.assertEquals(alActResult, alExpResult);
+}

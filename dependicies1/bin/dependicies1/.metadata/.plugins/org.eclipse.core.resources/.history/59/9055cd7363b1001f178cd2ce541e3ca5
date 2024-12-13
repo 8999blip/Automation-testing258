@@ -1,0 +1,228 @@
+package testngmaven;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class LoginTest {
+
+
+	
+	@Test
+	
+	public void testlogin() {
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://javabykiran.com/selenium/login.html");
+	WebElement ActualResult=driver.findElement(By.xpath("/html/body/div/div/h1"));
+		
+		System.out.println(ActualResult);
+		
+		String ExpectedResult="Welcome here";
+		Assert.assertEquals(ActualResult,ExpectedResult);
+		
+	}
+
+	
+	@Test
+	public void testTitle() {
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://javabykiran.com/selenium/login.html");
+		String ActualTitle =driver.getTitle();
+		System.out.println(ActualTitle);
+		String ExcepectedResult ="Login - TKA";
+		Assert.assertEquals(ActualTitle,ExcepectedResult);
+	}
+	
+		
+	
+  @SuppressWarnings("unused")
+@Test
+  
+  public void testTitle1() {
+	  WebDriver driver =new ChromeDriver();
+	  driver.get("https://javabykiran.com/selenium/login.html");
+	  String ActualResult= driver.getTitle();
+	 
+  }
+	  
+  
+  
+  
+@Test
+public void testLoginButtonEnabled() {
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://javabykiran.com/selenium/login.html");
+    
+    // Verify if the login button is enabled
+    WebElement loginButton = driver.findElement(By.xpath("//button[text()='Login']"));
+    Assert.assertTrue(loginButton.isEnabled(), "Login button is not enabled");
+    
+    driver.quit();
+}
+
+@Test
+public void testRedirectionAfterLogin() {
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://javabykiran.com/selenium/login.html");
+    
+    // Enter valid login credentials
+    driver.findElement(By.name("username")).sendKeys("admin");
+    driver.findElement(By.name("password")).sendKeys("password123");
+    driver.findElement(By.xpath("//button[text()='Login']")).click();
+    
+    // Verify the URL of the redirected page
+    String actualUrl = driver.getCurrentUrl();
+    String expectedUrl = "https://javabykiran.com/selenium/dashboard.html";
+    Assert.assertEquals(actualUrl, expectedUrl, "Redirection after login failed");
+    
+    driver.quit();
+}
+@Test
+public void testRedirectionAfterLogin1() {
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://javabykiran.com/selenium/login.html");
+    
+    // Enter valid login credentials
+    driver.findElement(By.name("username")).sendKeys("admin");
+    driver.findElement(By.name("password")).sendKeys("password123");
+    driver.findElement(By.xpath("//button[text()='Login']")).click();
+    
+    // Verify the URL of the redirected page
+    String actualUrl = driver.getCurrentUrl();
+    String expectedUrl = "https://javabykiran.com/selenium/dashboard.html";
+    Assert.assertEquals(actualUrl, expectedUrl, "Redirection after login failed");
+    
+    driver.quit();
+}
+
+@Test
+public void testPlaceholderText() {
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://javabykiran.com/selenium/login.html");
+    
+    // Check the placeholder text for the username
+    String usernamePlaceholder = driver.findElement(By.name("username")).getAttribute("placeholder");
+    Assert.assertEquals(usernamePlaceholder, "Enter your username", "Username placeholder mismatch");
+    
+    // Check the placeholder text for the password
+    String passwordPlaceholder = driver.findElement(By.name("password")).getAttribute("placeholder");
+    Assert.assertEquals(passwordPlaceholder, "Enter your password", "Password placeholder mismatch");
+    
+    driver.quit();
+}
+
+
+@Test
+public void testAddCategory() {
+    // Initialize WebDriver
+    WebDriver driver = new ChromeDriver();
+
+    // Navigate to the login page
+    driver.get("https://javabykiran.com/selenium/login.html");
+    
+    // Enter valid login credentials
+    driver.findElement(By.name("username")).sendKeys("admin");
+    driver.findElement(By.name("password")).sendKeys("password123");
+    driver.findElement(By.xpath("//button[text()='Login']")).click();
+
+    // Navigate to Categories page
+    driver.findElement(By.linkText("Categories")).click();
+
+    // Click on "Add Category" button
+    driver.findElement(By.xpath("//button[contains(text(), 'Add Category')]")).click();
+
+    // Fill out the "Add Category" form
+    driver.findElement(By.name("categoryName")).sendKeys("History");
+    driver.findElement(By.name("createdAt")).sendKeys("2024-12-01");
+    driver.findElement(By.name("modifiedAt")).sendKeys("2024-12-02");
+
+    // Submit the form
+    driver.findElement(By.xpath("//button[text()='Save']")).click();
+
+    // Verify that the new category is added to the table
+    WebElement categoryNameElement = driver.findElement(By.xpath("//td[text()='History']"));
+    Assert.assertNotNull(categoryNameElement, "New category was not added successfully");
+
+    // Verify that the table contains the correct data
+    String actualCategoryName = categoryNameElement.getText();
+    String expectedCategoryName = "History";
+    Assert.assertEquals(actualCategoryName, expectedCategoryName, "Category name mismatch");
+    
+    // Close the browser
+    driver.quit();
+}
+
+@Test
+public void testRedirectionAfterLogin11() {
+    // Initialize WebDriver
+    WebDriver driver = new ChromeDriver();
+    
+    // Navigate to the login page
+    driver.get("https://javabykiran.com/selenium/login.html");
+    
+    // Enter valid login credentials
+    driver.findElement(By.name("username")).sendKeys("admin");
+    driver.findElement(By.name("password")).sendKeys("password123");
+    driver.findElement(By.xpath("//button[text()='Login']")).click();
+    
+    // Capture the current URL after login
+    String actualUrl = driver.getCurrentUrl();
+    System.out.println("Actual URL: " + actualUrl);
+    
+    // Expected URL of the dashboard
+    String expectedUrl = "https://javabykiran.com/selenium/dashboard.html";
+    
+    // Assert the URL matches the expected URL
+    Assert.assertEquals(actualUrl, expectedUrl, "Redirection to dashboard failed");
+    
+    // Close the browser
+    driver.quit();
+}
+
+
+@Test
+public void testEditCategory() {
+    // Initialize WebDriver
+    WebDriver driver = new ChromeDriver();
+
+    // Navigate to the login page
+    driver.get("https://javabykiran.com/selenium/login.html");
+    
+    // Enter valid login credentials
+    driver.findElement(By.name("username")).sendKeys("admin");
+    driver.findElement(By.name("password")).sendKeys("password123");
+    driver.findElement(By.xpath("//button[text()='Login']")).click();
+
+    // Navigate to Categories page
+    driver.findElement(By.linkText("Categories")).click();
+
+    // Click on the "Edit" button for the first category
+    WebElement editButton = driver.findElement(By.xpath("//table//tr[2]//td[contains(@class, 'actions')]//button[contains(text(), 'Edit')]"));
+    editButton.click();
+
+    // Clear the current value and update the category name
+    WebElement categoryNameField = driver.findElement(By.name("categoryName"));
+    categoryNameField.clear();
+    categoryNameField.sendKeys("Updated Mathematics");
+
+    // Update other fields if necessary
+    WebElement modifiedAtField = driver.findElement(By.name("modifiedAt"));
+    modifiedAtField.clear();
+    modifiedAtField.sendKeys("2024-12-03");
+
+    // Click the "Save" button to submit the changes
+    driver.findElement(By.xpath("//button[text()='Update']")).click();
+
+    // Verify that the changes are reflected in the category list
+    WebElement updatedCategoryName = driver.findElement(By.xpath("//table//tr[2]//td[text()='Updated Mathematics']"));
+    Assert.assertNotNull(updatedCategoryName, "Category name was not updated successfully");
+
+    // Close the browser
+    driver.quit();
+}
+}

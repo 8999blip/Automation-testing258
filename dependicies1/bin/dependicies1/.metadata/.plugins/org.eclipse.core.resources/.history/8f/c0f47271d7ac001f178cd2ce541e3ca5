@@ -1,0 +1,14 @@
+package articraft;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class ATest<A> {
+	
+	@Test
+	public void testSOmething() {
+		Assert.assertEquals(3, 6);
+	
+	}
+
+}

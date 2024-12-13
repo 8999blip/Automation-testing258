@@ -1,0 +1,41 @@
+package testngmaven;
+
+import java.io.IOException;
+
+import jxl.Cell;
+import jxl.Sheet;
+
+public class ExcelReading2 {
+	public static void main(String[] args) throws IOException, Exception {
+		System.out.println(1);
+		System.out.println(2);
+	
+	System.out.println(3);
+	 Sheet sheet = null;
+	try {
+	
+	} catch (IndexOutOfBoundsException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 System.out.println(4);
+	  
+	 @SuppressWarnings("null")
+	int rows= sheet.getRows();
+	  int colm= sheet.getColumns();
+	  for(int i=0;i<colm;i++)
+		  
+		  for(int j=0;j<rows;j++);
+	  {
+		  Cell cell = sheet.getCell(colm, colm);
+		  System.out.println(5);
+		  
+		  String data = cell.getContents();
+		  System.out.println(6);
+		  
+		  System.out.println("data>>"+data);
+		  System.out.println(7);
+	  }
+	
+	}
+}

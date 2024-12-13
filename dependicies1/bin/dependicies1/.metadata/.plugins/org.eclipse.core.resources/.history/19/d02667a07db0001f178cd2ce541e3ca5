@@ -1,0 +1,42 @@
+package testngmaven;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class LoginTest {
+	
+	@Test
+	
+	public void testlogin() {
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://javabykiran.com/selenium/login.html");
+		WebElement ActualResult=driver.findElement(By.xpath("/html/body/div/div/h1"));
+		
+		System.out.println(ActualResult);
+		
+		String ExpectedResult="Welcome here";
+		Assert.assertEquals(ActualResult,ExpectedResult);
+	}
+	@Test
+	public void testTitle() {
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://javabykiran.com/selenium/login.html");
+		String ActualTitle =driver.getTitle();
+		System.out.println(ActualTitle);
+		String ExcepectedResult ="Login - TKA";
+		Assert.assertEquals(ActualTitle,ExcepectedResult);
+	}
+			
+			
+			
+		}
+	
+
+
+		// TODO Auto-generated met
+

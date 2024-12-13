@@ -1,0 +1,12 @@
+package com.tka;
+
+public class A {
+	void m1() {
+		System.out.println("A -m1");
+	}
+	
+	public static void main(String[] args) {
+		B bb =new B();
+	}
+
+}

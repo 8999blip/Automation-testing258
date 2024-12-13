@@ -1,0 +1,38 @@
+package testngmaven;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TestCaesFb {
+	
+@Test
+	
+	public  void FBTestCases  () {
+	} {
+	WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/login/");
+		WebElement ActualResult=driver.findElement(By.xpath("//*[@id=\"facebook\"]/body/script[1]"));
+		System.out.println(ActualResult);
+		
+	}
+	@Test
+	public void testTitle() {
+		
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://www.facebook.com/login/");
+		String ActualTitle =driver.getTitle();
+		System.out.println(ActualTitle);
+		String ExcepectedResult =" Login to Facebook";
+		
+	}
+	
+		
+
+
+
+
+

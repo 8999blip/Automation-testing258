@@ -1,0 +1,15 @@
+package com.jbk;
+
+import java.io.FileNotFoundException;
+
+public class excelreading {
+	public static <Workbook> void main(String[] args, Object Workbook) throws FileNotFoundException {
+		@SuppressWarnings("unused")
+		Object workbook = ((Object) Workbook);
+		
+		
+		
+	}
+	
+
+}

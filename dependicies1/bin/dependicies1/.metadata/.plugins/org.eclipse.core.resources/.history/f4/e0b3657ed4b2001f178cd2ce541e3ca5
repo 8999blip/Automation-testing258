@@ -1,0 +1,27 @@
+package testngmaven;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+import org.testng.reporters.jq.Main;
+
+public class WebTableTestCases {
+	
+	@Test
+	public void testInvalidCreadentialsLoginpage() {
+		alExpResult.add("Category ID");
+		alExpResult.add("Category Name");
+		alExpResult.add("Creatd at");
+		alExpResult.add("Modified At");
+		alExpResult.add("Actions");
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://javabykiran.com/selenium/admin.html#logout");
+		for (int i = 1; i <=4; i++) {
+			String actColumn = driver.findElement(By.path("//*[@id=\"categories-table\"]/thead/tr/th[1]"));
+		}
+		
+	}
+
+
+}

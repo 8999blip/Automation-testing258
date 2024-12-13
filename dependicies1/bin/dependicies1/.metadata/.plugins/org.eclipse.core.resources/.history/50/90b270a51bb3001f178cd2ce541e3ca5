@@ -1,0 +1,10 @@
+package testngmaven;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class excelreadding {
+	public static <Workbook> void main(String[] args, Object Workbook) throws FileNotFoundException {
+		FileInputStream fis = new FileInputStream("C:\\excel.xls");
+
+}

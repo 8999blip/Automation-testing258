@@ -1,0 +1,32 @@
+package testngmaven;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.lang.Character.Subset;
+
+import javax.swing.text.html.StyleSheet;
+
+import org.openqa.selenium.devtools.v129.target.Target;
+
+import com.google.common.collect.Table.Cell;
+
+public class excelreadding {
+	public static <Workbook> void main(String[] args, Object Workbook) throws FileNotFoundException {
+		FileInputStream fis = new FileInputStream("C:\\excel.xls");
+		System.out.println(2);
+		Workbook workbook = ((Object) Workbook).getworkbook(fis);
+		System.out.println(3);
+		
+		Subset sheet = ((Object) Workbook).getSheet(0);
+		System.out.println(4);
+		
+		Cell cell = StyleSheet.getcell(0,0);
+		System.out.println();
+		
+		String data = Target.contents();
+		System.out.println();
+		
+		System.out.println("data>> " + data);
+
+}
+}

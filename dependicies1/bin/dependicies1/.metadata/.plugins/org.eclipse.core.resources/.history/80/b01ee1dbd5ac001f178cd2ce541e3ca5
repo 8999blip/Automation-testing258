@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author kumbh
+ *
+ */
+module project1 {
+	requires Project2;
+}

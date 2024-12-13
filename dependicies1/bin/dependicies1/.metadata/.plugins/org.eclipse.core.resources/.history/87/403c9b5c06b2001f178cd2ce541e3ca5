@@ -1,0 +1,17 @@
+package com.jbk;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class excelreading {
+	public static void main(String[] args) throws FileNotFoundException {
+		FileInputStream fis = new FileInputStream("C:\\excel.xls");
+		
+		Workbook workbook = Workbook.getworkbook(fis);
+		
+		
+		
+	}
+	
+
+}

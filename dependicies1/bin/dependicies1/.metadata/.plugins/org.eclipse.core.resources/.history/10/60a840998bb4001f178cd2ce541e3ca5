@@ -1,0 +1,20 @@
+package testngmaven;
+
+import java.awt.Desktop.Action;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class ExtraActionsTest {
+	
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://javabykiran.com/selenium/subcategories.html");
+		Action action = new Action(driver);action
+		
+		.doubleClick(driver.findElement(By.xpath("/sddf/dsfsd/fds"))).perform();
+	}
+}
+

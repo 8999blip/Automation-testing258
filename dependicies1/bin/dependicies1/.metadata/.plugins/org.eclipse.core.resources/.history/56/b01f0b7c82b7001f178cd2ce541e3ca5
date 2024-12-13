@@ -1,0 +1,22 @@
+package testngmaven;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.decorators.WebDriverDecorator;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
+
+public class AutomationWatchingEx {
+	public static <webdriverActivitiesListener> void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+		webdriverActivitiesListener wd = new webdriverActivitiesListener();
+		
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		WebDriver driverWatch =new EventFiringDecorator((WebDriverListener[]) wd).decorate(driver);
+		
+		driverWatch.get("http://thekiranacademy.com/");
+		driverWatch.quit();
+	}
+
+}
